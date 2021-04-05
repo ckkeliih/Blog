@@ -1,0 +1,24 @@
+<%- include("partials/header"); -%>
+    <h1>Weather</h1>
+    <p> <%= weatherContent %> </p>
+
+    <form class="" action="/weather" method="post">
+      <div class="form-group">
+         <label for="cityInput">City: </label>
+        <input class="form-control" type="text" name="cityInput">
+      <button class="btn btn-primary" type="submit" name="button">Go</button>
+    </form>
+
+    <% weatherInfo.forEach(function(weather){ %>
+      <h1>Weather Data for <%=weather.city%> </h1>
+      <h3>The weather is currently <%=weather.description%></h3>
+      <h3>The temperature is <%=weather.temp%>°F</h3>
+      <h3>There's a humidity of <%=weather.humidity%>%</h3>
+      <h3>The wind direction is <%=weather.direction%>°</h3>
+      <img src="<%=weather.image%>">
+    <% })%>
+    
+    
+    
+
+<%- include("partials/footer"); -%>
